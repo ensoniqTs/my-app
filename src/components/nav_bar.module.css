@@ -4,5 +4,11 @@
 }
 
 .item{
-    color: #fff;
+    color: rgb(133, 201, 116);
+    text-decoration: none;
+}
+
+.active{
+    color: rgb(0, 7, 100);
+    font-style: italic;
 }
