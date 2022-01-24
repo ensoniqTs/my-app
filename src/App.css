@@ -10,3 +10,7 @@
 }
 
 
+.main__content{
+  grid-area: m_content;
+ 
+}
