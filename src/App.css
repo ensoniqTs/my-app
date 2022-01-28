@@ -12,5 +12,6 @@
 
 .main__content{
   grid-area: m_content;
+  background-color: rgb(209, 209, 209);
  
 }

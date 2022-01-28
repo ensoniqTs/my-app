@@ -1,14 +1,18 @@
 .nav__bar{
     grid-area: nav;
     background-color: rgba(154, 191, 194, 0.527);
+    padding-left: 20px;
+    
 }
 
 .item{
-    color: rgb(133, 201, 116);
+    color: rgb(10, 67, 253);
     text-decoration: none;
 }
 
 .active{
     color: rgb(0, 7, 100);
     font-style: italic;
+    text-decoration: none;
+    text-shadow: rgba(116, 116, 116, 0.808) 2px 3px 5px;
 }

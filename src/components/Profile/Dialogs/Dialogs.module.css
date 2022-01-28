@@ -1,0 +1,15 @@
+.dialogs{
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    padding-left: 10px;
+}
+
+.dialog{
+    color: coral;
+    text-decoration: none;
+    text-shadow:rgb(109, 93, 107) 2px 2px 3px;
+}
+.active{
+    color: rgb(248, 0, 0);
+    text-shadow:rgb(109, 93, 107) -2px 2px 3px;
+}
