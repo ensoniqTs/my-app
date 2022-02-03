@@ -1,10 +1,15 @@
 import s from './MyPosts.module.css'
-import MyPost from './Post/MyPost'
-const MyPosts = () => {
+import MyPost from './Post/Post'
+
+
+
+
+
+const MyPosts = (props) => {
+    let postElement = props.Post.map(e => <MyPost postElem={e.pMessage} likeCount={e.likeCount} />)
     return (
         <div className={s.item}>
-            <MyPost message='Hi this a new message' likeCount='15' />
-            <MyPost message='This is second message' likeCount='20' />
+            {postElement}
         </div>
     )
 }

@@ -13,7 +13,8 @@ import Setings from './components/Profile/Setings/Setings';
 
 
 
-function App() {
+function App(props) {
+
   return (
     <BrowserRouter>
       <div className='wrapper'>
@@ -21,13 +22,14 @@ function App() {
         <Nav_bar />
         <div className='main__content'>
           <Routes>
-            <Route path='/profile' element={<Profile />} />
-            <Route path='/dialogs/*' element={<Dialogs />} />
+            <Route path='/profile' element={<Profile pMessage={props.state.MessageElement} />} />
+            <Route path='/dialogs/*' element={<Dialogs dialogs={props.state.dialogsItem} message={props.state.messageItem} />} />
             <Route path='/news' element={<News />} />
             <Route path='/music' element={<Music />} />
             <Route path='/setings' element={<Setings />} />
 
           </Routes>
+
 
         </div>
 
@@ -36,5 +38,7 @@ function App() {
 
   );
 }
+
+
 
 export default App;
