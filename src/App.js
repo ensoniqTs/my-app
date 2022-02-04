@@ -22,8 +22,8 @@ function App(props) {
         <Nav_bar />
         <div className='main__content'>
           <Routes>
-            <Route path='/profile' element={<Profile pMessage={props.state.MessageElement} />} />
-            <Route path='/dialogs/*' element={<Dialogs dialogs={props.state.dialogsItem} message={props.state.messageItem} />} />
+            <Route path='/profile' element={<Profile pMessage={props.state.profilePage.MessageElement} />} />
+            <Route path='/dialogs/*' element={<Dialogs dialogs={props.state.dialogsPage.dialogsItem} message={props.state.dialogsPage.messageItem} />} />
             <Route path='/news' element={<News />} />
             <Route path='/music' element={<Music />} />
             <Route path='/setings' element={<Setings />} />
