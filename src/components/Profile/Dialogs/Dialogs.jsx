@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import s from './Dialogs.module.css'
+import { actionAddMessage, actionMessageChange } from '../../../Redux/state'
 
 
 
@@ -20,30 +21,22 @@ const Messages = (props) => {
         <div className={s.message}>{props.message}</div>
     )
 }
-// const inputMessage = (props) => {
 
-//     return (
-//         <div>
-//             <textarea ref={newMessage}></textarea>
-//             <input onClick={send}>Send</input>
-//         </div>
-//     )
-// }
 
 
 
 const Dialogs = (props) => {
-    let messageElement = props.message.messageItem.map(e => <Messages message={e.message} id={e.id} />)
-    let DialogsElement = props.dialogs.map(e => < DialogItem name={e.name} id={e.id} />)
+    let messageElement = props.dialogs.messageItem.map(e => <Messages message={e.message} id={e.id} />)
+    let DialogsElement = props.dialogs.dialogsItem.map(e => < DialogItem name={e.name} id={e.id} />)
     let newMessage = React.createRef()
     let send = () => {
-        props.addNewMessage()
-        
+        props.dispatch(actionAddMessage())
+
     }
     let messageChange = () => {
         let text = newMessage.current.value
-        props.changeNewMessage(text)
-        
+        props.dispatch(actionMessageChange(text))
+
     }
 
     return (

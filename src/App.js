@@ -23,13 +23,9 @@ function App(props) {
         <Nav_bar />
         <div className='main__content'>
           <Routes>
-            <Route path='/profile' element={<Profile pMessage={props.state.profilePage} 
-                                                    addPost={props.store.addPost.bind(store)} 
-                                                    changeNewText= {props.store.changeNewText.bind(store)}/>} />
-            <Route path='/dialogs/*' element={<Dialogs dialogs={props.state.dialogsPage.dialogsItem} 
-                                                        message={props.state.dialogsPage}
-                                                        changeNewMessage={props.store.changeNewMessage.bind(store)}
-                                                        addNewMessage={props.store.addNewMessage.bind(store)} />} />
+            <Route path='/profile' element={<Profile pMessage={props.state.profilePage} dispatch={props.store.dispatch.bind(store)} />} />
+            <Route path='/dialogs/*' element={<Dialogs dialogs={props.state.dialogsPage}
+              message={props.state.dialogsPage} dispatch={props.store.dispatch.bind(store)} />} />
             <Route path='/news' element={<News />} />
             <Route path='/music' element={<Music />} />
             <Route path='/setings' element={<Setings />} />

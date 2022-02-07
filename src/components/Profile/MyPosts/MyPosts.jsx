@@ -11,16 +11,16 @@ const MyPosts = (props) => {
 
     let newPostElement = React.createRef()
     let f = () => {
-        props.addPost() 
-    } 
+        props.dispatch({ type: 'ADD-POST' })
+    }
     let postChange = () => {
         let text = newPostElement.current.value
-        props.changeNewText(text)
-    }  
+        props.dispatch({ type: 'CHANGE-POST', newChangePostText: text })
+    }
     return (
         <div className={s.item}>
             <div>
-                <textarea ref={newPostElement} onChange={postChange} value={props.Post.newPostText}/>
+                <textarea ref={newPostElement} onChange={postChange} value={props.Post.newPostText} placeholder='введите сообщение' />
             </div>
             <div>
                 <button onClick={f}>add</button>
