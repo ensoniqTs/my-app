@@ -9,7 +9,7 @@ import Music from './components/Profile/Music/Music';
 import News from './components/Profile/News/News';
 import Profile from './components/Profile/profile';
 import Setings from './components/Profile/Setings/Setings';
-import store from './Redux/state';
+import store from './Redux/redux_store';
 
 
 

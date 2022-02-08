@@ -1,20 +1,46 @@
 const ADD_MESSAGE = 'ADD-MESSAGE'
 const CHANGE_MESSAGE = 'CHANGE-MESSAGE'
 
-const dialogsReduser = (state, action) => {
-    if (action.type === 'ADD-MESSAGE') {
-        let newMessage = {
-            message: state.dialogsPage.newMessage,
-            id: '3',
-        }
-        state.dialogsPage.messageItem.push(newMessage)
-        state.dialogsPage.newMessage = ''
+let initialState = {
+    messageItem: [
+        { message: 'Привет, как дела?', id: '1' },
+        { message: 'Что нового?', id: '2' }
+    ],
+    newMessage: '',
+    dialogsItem: [
+        { name: 'Олег', id: '1' },
+        { name: 'Таня', id: '2' },
+        { name: 'Макс', id: '3' },
+        { name: 'Саша', id: '4' }
+    ]
+}
 
-    } else if (action.type === 'CHANGE-MESSAGE') {
-        state.dialogsPage.newMessage = action.newText
+const dialogsReduser = (state = initialState, action) => {
+    switch (action.type) {
+        case ADD_MESSAGE:
+            let newMessage = {
+                message: state.newMessage,
+                id: '3',
+            }
+            state.messageItem.push(newMessage)
+            state.newMessage = ''
+            return state
+        case CHANGE_MESSAGE:
+            state.newMessage = action.newText
+            return state
 
+        default: return state
+    }
 
-        return state
+}
+export const actionAddMessage = () => {
+    return { type: ADD_MESSAGE }
+}
+
+export const actionMessageChange = (text) => {
+    return {
+        type: CHANGE_MESSAGE,
+        newText: text
     }
 }
 

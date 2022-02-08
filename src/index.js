@@ -1,5 +1,5 @@
 
-import store from './Redux/state';
+import store from './Redux/redux_store';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -9,19 +9,24 @@ import reportWebVitals from './reportWebVitals';
 
 
 
-let rerenderTree=(state)=>{
+let rerenderTree = (state) => {
   ReactDOM.render(
     <React.StrictMode>
-      <App state={state} store = {store}/>
+      <App state={state} store={store} />
     </React.StrictMode>,
     document.getElementById('root')
   );
 }
 
-store.subscribe(rerenderTree)
-
-
 rerenderTree(store.getState())
+
+store.subscribe(() => {
+  let state = store.getState()
+  rerenderTree(state)
+})
+
+
+
 
 
 

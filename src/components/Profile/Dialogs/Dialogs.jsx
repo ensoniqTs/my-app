@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import s from './Dialogs.module.css'
-import { actionAddMessage, actionMessageChange } from '../../../Redux/state'
+import { actionAddMessage, actionMessageChange } from '../../../Redux/dialogs_reduser'
 
 
 
