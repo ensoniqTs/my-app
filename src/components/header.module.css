@@ -1,8 +1,22 @@
 .header{
+    display: grid;
     grid-area: header;
-    background-color: rgba(154, 191, 194, 0.527);
-  
+    background: linear-gradient(rgb(176, 176, 240), 10%, rgb(247, 247, 253));
+    border-radius: 10px;
+    box-shadow: 2px 3px 5px rgb(83, 83, 83);
+    margin-bottom: 10px;
+    grid-template-columns: 1fr 10fr;
   }
   .header img{
     width: 80px;
+    margin-left: 3px;
+  }
+
+  .header_h h1{
+    margin: 0 auto;
+    text-transform: uppercase;
+    color: rgba(37, 97, 10, 0.459);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+    
   }
