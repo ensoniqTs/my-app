@@ -8,6 +8,7 @@ import MyPostsContainer from './MyPosts_continer'
 
 
 const MyPosts = (props) => {
+
     let postElement = props.Post.MessageElement.map(e => <MyPost postElem={e.pMessage} likeCount={e.likeCount} />)
 
     let newPostElement = React.createRef()
@@ -15,19 +16,26 @@ const MyPosts = (props) => {
     //     props.dispatch({ type: 'ADD-POST' })
     // }
 
-    let text = newPostElement.current.value
-
     // let postChange = () => {
     //     let text = newPostElement.current.value
     //     props.dispatch({ type: 'CHANGE-POST', newChangePostText: text })
     // }
+
+    let newPost = () => {
+        let text = newPostElement.current.value
+        props.newChangePost(text)
+    }
+    let addPosts = () => {
+        props.addPosts()
+    }
+
     return (
         <div className={s.item}>
             <div>
-                <textarea ref={newPostElement} onChange={props.newChangePost(text)} value={props.Post.newPostText} placeholder='введите сообщение' />
+                <textarea ref={newPostElement} onChange={newPost} value={props.Post.newPostText} placeholder='введите сообщение' />
             </div>
             <div>
-                <button onClick={props.addPost}>add</button>
+                <button onClick={addPosts}>add</button>
             </div>
             {postElement}
         </div>

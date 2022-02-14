@@ -1,5 +1,6 @@
 import style from '.././profile.module.css'
-import MyPosts from './MyPosts/MyPosts'
+
+import MyPostsContainer from './MyPosts/MyPosts_continer'
 
 const Profile = (props) => {
 
@@ -8,7 +9,7 @@ const Profile = (props) => {
             <div>
                 <   img src='https://www.w3schools.com/css/img_5terre_wide.jpg' alt='111' />
             </div>
-            <MyPosts Post={props.pMessage} dispatch={props.dispatch} />
+            <MyPostsContainer Post={props.pMessage} dispatch={props.dispatch} />
         </div>
     )
 }

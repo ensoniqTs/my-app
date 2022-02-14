@@ -10,6 +10,7 @@ import News from './components/Profile/News/News';
 import Profile from './components/Profile/profile';
 import Setings from './components/Profile/Setings/Setings';
 import store from './Redux/redux_store';
+import DialogsContainer from './components/Profile/Dialogs/Dialogs_conteiner';
 
 
 
@@ -24,7 +25,7 @@ function App(props) {
         <div className='main__content'>
           <Routes>
             <Route path='/profile' element={<Profile pMessage={props.state.profilePage} dispatch={props.store.dispatch.bind(store)} />} />
-            <Route path='/dialogs/*' element={<Dialogs dialogs={props.state.dialogsPage}
+            <Route path='/dialogs/*' element={<DialogsContainer dialogs={props.state.dialogsPage}
               message={props.state.dialogsPage} dispatch={props.store.dispatch.bind(store)} />} />
             <Route path='/news' element={<News />} />
             <Route path='/music' element={<Music />} />
